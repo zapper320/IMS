@@ -1,0 +1,100 @@
+ <ul class="the_menu">
+<table id="customers">
+        <td><li><a href="/candidate">Home</a></li</td>
+             <td>
+      <li><%= link_to 'Click To Generate Details of New Candidates', new_interview_path %></li>
+      </td>
+      <td>
+      <li><%= link_to 'Import Candidates Details via CSV File', :controller => 'import_candidates'%></li>
+      </td>
+      </ul>
+    </table>
+
+    <h2>Interview Management System</h2>
+<center><h4>Showing Details of <%=h @interview.name.upcase %></h4>
+  <br></br><br></br><br></br>
+
+  <table id="customers" align="center">
+   
+    <tr>
+      <th>
+
+        <b>Name:</b>
+      </th>
+      <td>
+        <%=h @interview.name %>
+      </td>
+    </tr>
+    <tr>
+      <th>
+        <b>Total Experience:</b>
+      </th>
+      <td>
+        <%=h @interview.total_exp %>
+      </td>
+    </tr>
+    <tr>
+      <th>
+        <b>Skills:</b>
+      </th>
+      <td>
+        <%=h @interview.ror_exp %>
+      </td>
+    </tr>
+    <tr>
+      <th>
+        <b>Date of Interview:</b>
+      </th>
+      <td>
+        <%=h @interview.doi %>
+      </td>
+    </tr>
+    <tr>
+      <th>
+        <b>Type/Location:</b>
+      </th>
+      <td>
+        <%=h @interview.type_location %>
+      </td>
+    </tr>
+    <tr>
+      <th>
+        <b>Contact Number:</b>
+      </th>
+      <td>
+        <%=h @interview.phoneNumber %>
+      </td>
+    </tr>
+    <tr>
+      <th>
+        <b>Remarks:</b>
+      </th>
+      <td>
+        <%=h @interview.remarks %>
+      </td>
+    </tr>
+    <tr>
+      <th>
+        <b>Email:</b>
+      </th>
+      <td>
+        <%=h @interview.email %>
+      </td>
+    </tr>
+    <tr>
+      <th>
+        <b>Status:</b>
+      </th>
+      <td>
+        
+        <%=h @interview.result %>
+      </td>
+    </tr>
+    <tr></tr>
+    
+    <tr>
+      <td></td><td>
+ <%= link_to '<input type="button" value="Edit"', edit_interview_path(@interview) %>
+ <%= link_to '<input type="button" value="Back"', interviews_path %></td></tr></table>
+           
+   

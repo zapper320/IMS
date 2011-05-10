@@ -1,0 +1,2 @@
+module ImportCandidatesHelper
+end

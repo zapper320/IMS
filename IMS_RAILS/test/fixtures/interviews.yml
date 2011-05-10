@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  associate: MyString
+  interviewer: MyString
+  remarks: MyString
+  result: MyString
+
+two:
+  associate: MyString
+  interviewer: MyString
+  remarks: MyString
+  result: MyString

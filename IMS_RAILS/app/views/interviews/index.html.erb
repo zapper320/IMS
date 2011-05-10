@@ -1,0 +1,72 @@
+
+<head>
+  <style type="text/css">
+    table,td,th
+    {
+      border: 1px solid black;
+      border-style: b outset;
+      width: 150%
+        text-align:center;
+    }
+    th
+    {
+      background-color:#302f2f;
+      color:#fff;
+    }
+    td
+    {
+      text-align:center;
+    }
+  </style>
+</head>
+<ul class="the_menu">
+<table id="customers">
+  <td><li><a href="/candidate">Home</a></li</td>
+<td>
+<li><%= link_to 'Click To Generate Details of New Candidates', new_interview_path %></li>
+</td>
+<td>
+<li><%= link_to 'Import Candidates Details via CSV File', :controller => 'import_candidates'%></li>
+</td>
+</ul>
+</table>
+
+<center><h2>Details</h2></center>
+<br></br>
+
+</center>
+<br></br><br></br>
+<center>
+  <table id="customers">
+    <tr>
+      <th>Name</th>
+      <th>Edit</th>
+      <th>Delete</th>
+
+    </tr>
+
+    <% @interviews.each do |interview| %>
+      <tr>
+
+        <td>
+
+
+          <%= link_to "#{h interview.name}",interview %>
+        <td>
+          <%=  link_to image_tag("edit-icon.png", :alt => "Upload File", :title => "UPLOAD",:width => 20, :height => 20) ,edit_interview_path(interview) %>
+        </td><td> <%=  link_to image_tag("Symbols Delete.png", :alt => "Delete", :title => "DELETE",:width => 20, :height => 25), interview, :confirm => 'Are you sure?', :method => :delete %>
+        </td>
+        </td>
+
+
+
+      </tr>
+    <% end %>
+
+  </table>
+
+  <%= will_paginate @interviews %>
+  <br></br>
+  <br></br><br></br>
+  <%= page_entries_info @interviews %>
+  <br />

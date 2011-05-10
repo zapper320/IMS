@@ -1,0 +1,71 @@
+ <ul class="the_menu">
+<table id="customers">
+        <td><li><a href="/candidate">Home</a></li</td>
+             <td>
+      <li><%= link_to 'Click To Generate Details of New Candidates', new_interview_path %></li>
+      </td>
+      <td>
+      <li><%= link_to 'Import Candidates Details via CSV File', :controller => 'import_candidates'%></li>
+      </td>
+      </ul>
+    </table>
+<center><h2>Editing interview</h2></center>
+<br></br><br></br>
+<center>
+<% form_for @interview, :html => {:multipart => true}  do |f| %>
+  
+  <%= f.error_messages %>
+<table id="customers">
+               <caption>Interview Management System</caption>
+ 
+  <tr><th>
+    <%= f.label :Name %><br /></th><td>
+    <%= f.text_field :name %>
+    </td></tr>
+  <tr><th>
+    Total <%= f.label :Experience %><br /></th><td>
+    <%= f.text_field :total_exp %>
+    </td></tr>
+  <tr><th>
+     <%= f.label :Skills %><br/></th><td>
+      <%= select( "interview", "ror_exp", { "None" => "None" , "J2EE" => "J2EE", "JAVA" => "JAVA","asp.net" => "asp.net"}) %>
+  </td></tr>
+  <tr><th>
+    Type <%= f.label :Location %><br /></th><td>
+    <%= f.text_field :type_location %>
+    </td></tr>
+  <tr><th>
+    Date of <%= f.label :Interview %><br /></th><td>
+    <%= f.text_field :doi %>
+    </td></tr>
+   <tr><th>
+    Contact<%= f.label :Number %><br /></th><td>
+    <%= f.text_field :phoneNumber %>
+    </td></tr>
+    <tr><th>
+    <%= f.label :Remarks %><br /></th><td>
+    <%= f.text_field :remarks %>
+    </td></tr>
+    <tr><th>
+    <%= f.label :Email %><br /></th><td>
+    <%= f.text_field :email %>
+    </td></tr>
+  <tr><th>
+    <%= f.label :Status %><br /></th><td>
+    <%= f.text_field :result %>
+  </td></tr>
+  <tr><th>
+    <%= f.label :Documents %><br /></th><td>
+    <%= file_field :attachment, :data, { :class => "required" } %>
+  </td></tr>
+</table>
+<table id="customers">
+  <tr><tr><th>
+<%= f.submit 'Update' %>
+<%= link_to '<input type="button" value="Back"', interviews_path %>
+    </th></tr></tr>
+</table></center>
+
+
+
+<% end %>

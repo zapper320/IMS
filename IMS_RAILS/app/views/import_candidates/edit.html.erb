@@ -1,0 +1,12 @@
+<h1>Editing import_candidate</h1>
+
+<% form_for(@import_candidate) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @import_candidate %> |
+<%= link_to 'Back', import_candidates_path %>

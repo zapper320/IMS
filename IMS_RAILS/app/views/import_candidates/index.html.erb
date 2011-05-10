@@ -1,0 +1,33 @@
+ <center><ul class="the_menu">
+      <table id="customers">
+        <td><li><a href="/candidate">Home</a></li</td>
+             <td>
+      <li><%= link_to 'Click To Generate Details of New Candidates', new_interview_path %></li>
+      </td>
+      </ul>
+    </table>
+    <p style="color: green"><%= notice %></p>
+
+    <%= yield %>
+
+<% if flash[:notice] -%>
+<%= flash[:notice] %>
+<% end -%>
+
+<% if flash[:error] -%>
+<%= flash[:error] %>
+<% end -%>
+
+<% form_for :csv_import, :url=>{ :controller=>"import_candidates", :action => 'csv_import'},
+:html => { :multipart => true } do |f| %>
+<br></br><br></br><br></br><br></br>
+<center><table id="customers">
+  <tr><th><%= f.label :file, 'Import Participant file' %></th></tr>
+  <tr>  <th>		<%= f.file_field :file -%></p></th></tr>
+  <tr>  <th><p><%= submit_tag "Submit" %></p></th></tr>
+		<% end %>
+
+  <tr><td>	</td></tr>
+  </table>
+
+  <footer>This document belongs to TCS</footer>
